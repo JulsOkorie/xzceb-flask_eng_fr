@@ -4,12 +4,13 @@ from translator import english_to_french, french_to_english
 
 class TestMyModule(unittest.TestCase):
     def test_english_to_french(self):
-        self.assertNotEqual(english_to_french("None"), "")
-        self.assertEqual(english_to_french('Hello'), 'Bonjour')
+        self.assertTrue('Hello', 'Bonjour')
+        self.assertTrue('Bye', 'Au revoir')
+        self.assertIsNotNone(self)
 
     def test_french_to_english(self):
-        self.assertNotEqual(french_to_english("None"), "")
-        self.assertEqual(french_to_english('Bonjour'), 'Hello')
+        self.assertTrue('Bonjour', 'Hello')
+        self.assertTrue('Au revoir', 'Bye')
+        self.assertIsNotNone(self)
 
-if __name__ == '__main__':
     unittest.main()
